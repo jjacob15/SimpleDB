@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using static LiteDB.Constants;
+using static SimpleDB.Constants;
 
-namespace LiteDB
+namespace SimpleDB
 {
     public class BsonArray : BsonValue, IList<BsonValue>
     {

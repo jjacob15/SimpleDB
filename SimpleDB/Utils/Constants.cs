@@ -10,7 +10,7 @@ using System.Threading;
 namespace SimpleDB
 {
     /// <summary>
-    /// Class with all constants used in LiteDB + Debbuger HELPER
+    /// Class with all constants used in SimpleDB + Debbuger HELPER
     /// </summary>
     internal class Constants
     {
@@ -63,7 +63,7 @@ namespace SimpleDB
         /// Document limit size - 2048 data pages limit (about 16Mb - same size as MongoDB)
         /// Using 2047 because first/last page can contain less than 8150 bytes.
         /// </summary>
-        public const int MAX_DOCUMENT_SIZE = 2047 * DataService.MAX_DATA_BYTES_PER_PAGE;
+        //public const int MAX_DOCUMENT_SIZE = 2047 * DataService.MAX_DATA_BYTES_PER_PAGE;
 
         /// <summary>
         /// Define how many transactions can be open simultaneously
@@ -129,7 +129,7 @@ namespace SimpleDB
                     Debug.Fail(message);
                 }
                 
-                throw new Exception("LiteDB ENSURE: " + message);
+                throw new Exception("SimpleDB ENSURE: " + message);
             }
         }
 
@@ -146,7 +146,7 @@ namespace SimpleDB
                     Debug.Fail(message);
                 }
                 
-                throw new Exception("LiteDB ENSURE: " + message);
+                throw new Exception("SimpleDB ENSURE: " + message);
             }
         }
 
@@ -164,7 +164,7 @@ namespace SimpleDB
                     Debug.Fail(message);
                 }
                 
-                throw new Exception("LiteDB DEBUG: " + message);
+                throw new Exception("SimpleDB DEBUG: " + message);
             }
         }
     }

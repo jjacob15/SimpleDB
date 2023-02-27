@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static LiteDB.Constants;
+using static SimpleDB.Constants;
 
-namespace LiteDB.Engine
+namespace SimpleDB.Engine
 {
     /// <summary>
     /// Write data types/BSON data into byte[]. It's forward only and support multi buffer slice as source
@@ -150,7 +150,7 @@ namespace LiteDB.Engine
         /// </summary>
         public void WriteCString(string value)
         {
-            if (value.IndexOf('\0') > -1) throw LiteException.InvalidNullCharInString();
+            if (value.IndexOf('\0') > -1) throw SimpleException.InvalidNullCharInString();
 
             var bytesCount = Encoding.UTF8.GetByteCount(value);
             var available = _current.Count - _currentPosition; // avaiable in current segment

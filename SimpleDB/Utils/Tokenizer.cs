@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using static LiteDB.Constants;
+using static SimpleDB.Constants;
 
-namespace LiteDB
+namespace SimpleDB
 {
     #region TokenType definition
 
@@ -119,7 +119,7 @@ namespace LiteDB
         {
             if (this.Type != type)
             {
-                throw LiteException.UnexpectedToken(this);
+                throw SimpleException.UnexpectedToken(this);
             }
 
             return this;
@@ -132,7 +132,7 @@ namespace LiteDB
         {
             if (this.Type != type1 && this.Type != type2)
             {
-                throw LiteException.UnexpectedToken(this);
+                throw SimpleException.UnexpectedToken(this);
             }
 
             return this;
@@ -145,7 +145,7 @@ namespace LiteDB
         {
             if (this.Type != type1 && this.Type != type2 && this.Type != type3)
             {
-                throw LiteException.UnexpectedToken(this);
+                throw SimpleException.UnexpectedToken(this);
             }
 
             return this;
@@ -155,7 +155,7 @@ namespace LiteDB
         {
             if (!this.Is(value, ignoreCase))
             {
-                throw LiteException.UnexpectedToken(this, value);
+                throw SimpleException.UnexpectedToken(this, value);
             }
 
             return this;
@@ -222,7 +222,7 @@ namespace LiteDB
         /// </summary>
         public bool CheckEOF()
         {
-            if (_eof) throw LiteException.UnexpectedToken(this.Current);
+            if (_eof) throw SimpleException.UnexpectedToken(this.Current);
 
             return false;
         }

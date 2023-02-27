@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using static LiteDB.Constants;
+using static SimpleDB.Constants;
 
-namespace LiteDB.Engine
+namespace SimpleDB.Engine
 {
     /// <summary>
     /// Implement similar as ArrayPool for byte array
