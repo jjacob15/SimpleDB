@@ -1,5 +1,4 @@
-﻿#define HAVE_PROCESS
-using System;
+﻿using System;
 using System.Runtime.CompilerServices;
 using System.Security;
 using System.Threading;

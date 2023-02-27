@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-using System.Text.Json;
 
 namespace SimpleDB
 {
@@ -10,15 +9,14 @@ namespace SimpleDB
     {
         public static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         public static BsonValue Null = new BsonValue(BsonType.Null, null);
-        public static BsonValue MinVal = new BsonValue(BsonType.MinValue, "-oo");
+        public static BsonValue MinValue = new BsonValue(BsonType.MinValue, "-oo");
         public static BsonValue MaxValue = new BsonValue(BsonType.MaxValue, "+oo");
-
-
 
         public BsonType Type { get; }
 
         public virtual object RawValue { get; }
 
+        #region Constructor
         public BsonValue()
         {
             Type = BsonType.Null;
@@ -155,15 +153,37 @@ namespace SimpleDB
                 }
             }
         }
+        #endregion
 
+        #region Index "this" property
+
+        /// <summary>
+        /// Get/Set a field for document. Fields are case sensitive - Works only when value are document
+        /// </summary>
+        public virtual BsonValue this[string name]
+        {
+            get => throw new InvalidOperationException("Cannot access non-document type value on " + this.RawValue);
+            set => throw new InvalidOperationException("Cannot access non-document type value on " + this.RawValue);
+        }
+
+        /// <summary>
+        /// Get/Set value in array position. Works only when value are array
+        /// </summary>
+        public virtual BsonValue this[int index]
+        {
+            get => throw new InvalidOperationException("Cannot access non-array type value on " + this.RawValue);
+            set => throw new InvalidOperationException("Cannot access non-array type value on " + this.RawValue);
+        }
+
+        #endregion
 
         #region Convert types
 
-        //[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        //public BsonArray AsArray => this as BsonArray;
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public BsonArray AsArray => this as BsonArray;
 
-        //[DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        //public BsonDocument AsDocument => this as BsonDocument;
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public BsonDocument AsDocument => this as BsonDocument;
 
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public Byte[] AsBinary => this.RawValue as Byte[];
@@ -491,12 +511,12 @@ namespace SimpleDB
                 case BsonType.Double: return this.AsDouble.CompareTo(other.AsDouble);
                 case BsonType.Decimal: return this.AsDecimal.CompareTo(other.AsDecimal);
 
-                    //ignoring culture
+                //ignoring culture
                 case BsonType.String: return string.Compare(this.AsString, other.AsString);
-                    //collation.Compare(this.AsString, other.AsString);
+                //collation.Compare(this.AsString, other.AsString);
 
-                //case BsonType.Document: return this.AsDocument.CompareTo(other);
-                //case BsonType.Array: return this.AsArray.CompareTo(other);
+                case BsonType.Document: return this.AsDocument.CompareTo(other);
+                case BsonType.Array: return this.AsArray.CompareTo(other);
 
                 //case BsonType.Binary: return this.AsBinary.BinaryCompareTo(other.AsBinary);
                 case BsonType.ObjectId: return this.AsObjectId.CompareTo(other.AsObjectId);
@@ -604,8 +624,8 @@ namespace SimpleDB
                 case BsonType.Boolean: return 1;
                 case BsonType.DateTime: return 8;
 
-                //case BsonType.Document: return this.AsDocument.GetBytesCount(recalc);
-                //case BsonType.Array: return this.AsArray.GetBytesCount(recalc);
+                    //case BsonType.Document: return this.AsDocument.GetBytesCount(recalc);
+                    //case BsonType.Array: return this.AsArray.GetBytesCount(recalc);
             }
 
             throw new ArgumentException();
