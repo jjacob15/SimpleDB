@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32630.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB", "SimpleDB\SimpleDB.csproj", "{583989C4-555C-4582-BDAF-7065B858ECF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDB", "SimpleDB\SimpleDB.csproj", "{583989C4-555C-4582-BDAF-7065B858ECF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.Benchmarks", "SimpleDB.Benchmarks\SimpleDB.Benchmarks.csproj", "{B93C5CD9-FCDF-4AE3-A9B7-A02DEA4313DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDB.Benchmarks", "SimpleDB.Benchmarks\SimpleDB.Benchmarks.csproj", "{B93C5CD9-FCDF-4AE3-A9B7-A02DEA4313DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.Stress", "SimpleDB.Stress\SimpleDB.Stress.csproj", "{939943FA-F609-4AC7-A33D-5E401547A795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDB.Stress", "SimpleDB.Stress\SimpleDB.Stress.csproj", "{939943FA-F609-4AC7-A33D-5E401547A795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.Shell", "SimpleDB.Shell\SimpleDB.Shell.csproj", "{9A2AF6E5-517E-4996-A693-21B4AF79CD93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDB.Shell", "SimpleDB.Shell\SimpleDB.Shell.csproj", "{9A2AF6E5-517E-4996-A693-21B4AF79CD93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.Tests", "SimpleDB.Tests\SimpleDB.Tests.csproj", "{F6BB87FA-2470-4E82-BA3F-99E16963FE68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleDB.Tests", "SimpleDB.Tests\SimpleDB.Tests.csproj", "{F6BB87FA-2470-4E82-BA3F-99E16963FE68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleDB.Learnings", "SimpleDB.Learnings\SimpleDB.Learnings.csproj", "{F54251BB-3E75-49C4-A610-0787FA9E99B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F6BB87FA-2470-4E82-BA3F-99E16963FE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6BB87FA-2470-4E82-BA3F-99E16963FE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6BB87FA-2470-4E82-BA3F-99E16963FE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54251BB-3E75-49C4-A610-0787FA9E99B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54251BB-3E75-49C4-A610-0787FA9E99B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54251BB-3E75-49C4-A610-0787FA9E99B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54251BB-3E75-49C4-A610-0787FA9E99B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
